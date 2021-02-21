@@ -3,12 +3,10 @@ function bubbleSort(arr)
 {
 len = arr.length;
 for(var i=0;i<len;i++){
-  for(var j=i+1;j<len;j++){
-    if(arr[j]<arr[i]){
-      var temp=arr[j];
-      arr[j]=arr[i];
-      arr[i]=temp;
-    }
+  for(var j=0;j<len-i-1;j++){ //len-i-1 because the last is sorted after the 1st iteration,and last but one after second and so on...
+    if(arr[j] > arr[j+1]) {
+      	[arr[j],arr[j+1]] = [arr[j+1],arr[j]]
+      }
   }
 }
 return arr;
